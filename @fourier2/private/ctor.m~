@@ -1,0 +1,9 @@
+function g = ctor( g , op , ends , nx, ny )
+% fourier2 constructor 
+
+
+g.map = linear2D(ends);  
+
+[x,y] = fourierpts2(nx,ny,ends);
+
+
