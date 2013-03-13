@@ -12,7 +12,7 @@ classdef fourier2
     properties  ( GetAccess = 'public' , SetAccess = 'public' )
         nx          % number of modes in x direction
         ny          % number of modes in y derection
-        F           % function values on the grid
+        vals        % function values on the grid
         scl = 0     % Magnitude of fourier2.
         map = struct('for',[],'inv',[],'name',[]);         % Linear map to scale to unit square. 
     end

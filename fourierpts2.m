@@ -30,8 +30,13 @@ if nargin == 1 % make it a square chebyshev grid.
     ny = nx; 
 end
 
-x = D(1)+(D(2)-D(1))*(0:nx-1)/nx;
-y = D(3)+(D(4)-D(3))*(0:ny-1)/ny;
+if nargin >2 && isa(varargin{end},'char') % include points at pi?
+    x = D(1)+(D(2)-D(1))*(0:nx)/nx;
+    y = D(3)+(D(4)-D(3))*(0:ny)/ny;
+else
+    x = D(1)+(D(2)-D(1))*(0:nx-1)/nx;
+    y = D(3)+(D(4)-D(3))*(0:ny-1)/ny;
+end
 
 [xx, yy] = meshgrid(x,y);   % tensor product. 
 
